@@ -58,6 +58,20 @@
     "TYPE":"C",
     "LENGTH":30,
     "DECIMALS":-1
+   },
+   {
+    "NAME":"DEPENDENCY_CLASS",
+    "KEY":"",
+    "TYPE":"C",
+    "LENGTH":30,
+    "DECIMALS":-1
+   },
+   {
+    "NAME":"DB_READ_REPLACE_CLASS",
+    "KEY":"",
+    "TYPE":"C",
+    "LENGTH":30,
+    "DECIMALS":-1
    }
   ],
   "properties":

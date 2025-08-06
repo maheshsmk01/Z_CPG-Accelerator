@@ -12,7 +12,7 @@
     "SOURCE":"@EndUserText.label: 'Material Shelflife Management'\r\n@AccessControl.authorizationCheck: #MANDATORY\r\n@Metadata.allowExtensions: true\r\ndefine view entity ZI_MaterialShelflifeMa\r\n  as select from ZYDC_CONFIG_POC\r\n  association to parent ZI_MaterialShelflifeMa_S as _MaterialShelflifAll on $projection.SingletonID = _MaterialShelflifAll.SingletonID\r\n{\r\n  key CRITICALITY as Criticality,\r\n  DAYSFROM as Daysfrom,\r\n  DAYSTO as Daysto,\r\n  REMARKS as Remarks,\r\n  @Consumption.hidden: true\r\n  1 as SingletonID,\r\n  _MaterialShelflifAll\r\n  \r\n}\r\n/*+[internal] {\n\"BASEINFO\":\n{\n\"FROM\":\n[\n\"ZYDC_CONFIG_POC\"\n],\n\"ASSOCIATED\":\n[\n\"ZI_MATERIALSHELFLIFEMA_S\"\n],\n\"BASE\":\n[],\n\"ANNO_REF\":\n[],\n\"SCALAR_FUNCTION\":\n[],\n\"VERSION\":0,\n\"ANNOREF_EVALUATION_ERROR\":\"\"\n}\n}*/",
     "PARENTNAME":"",
     "ACTFLAG":"",
-    "CHGFLAG":"WD",
+    "CHGFLAG":"J,T429",
     "SOURCE_TYPE":"W",
     "SOURCE_ORIGIN":"0",
     "ABAP_LANGUAGE_VERSION":"5"
