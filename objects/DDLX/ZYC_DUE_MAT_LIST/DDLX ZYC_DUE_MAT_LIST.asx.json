@@ -7,9 +7,9 @@
     "DDLXNAME":"ZYC_DUE_MAT_LIST",
     "VERSION":"A",
     "CHANGED_BY":"SAP_CUSTOMER",
-    "CHANGED_ON":"2025-07-17",
-    "CHANGED_AT":"12:48:24",
-    "UUID":"FA163E3828681FE098E18A78F53E53F9",
+    "CHANGED_ON":"2026-01-27",
+    "CHANGED_AT":"07:28:16",
+    "UUID":"FA163E3828681FD0BEEA37C8DA91035D",
     "ABAP_LANGUAGE_VERSION":"5"
    }
   ]
@@ -34,7 +34,7 @@
     "DDLXNAME":"ZYC_DUE_MAT_LIST",
     "VERSION":"A",
     "UUID":"",
-    "SOURCE":"@Metadata.layer: #CUSTOMER\r\n@UI.headerInfo.title.type: #STANDARD\r\n@UI.headerInfo.title.label: 'Material Shelf Life Management'\r\n@UI.headerInfo.description.type: #STANDARD\r\n@UI.headerInfo.typeName: 'Material Due List'\r\n@UI.headerInfo.typeNamePlural: 'Material Shelf Life Management'\r\n\r\nannotate entity ZYCDS_DUE_MAT_LIST\r\n    with \r\n{\r\n @UI.facet: [{ id: 'Material',\r\n                purpose: #STANDARD,\r\n                type: #IDENTIFICATION_REFERENCE,\r\n                label: 'Material',\r\n                position: 10}\r\n                 ]\r\n\r\n  @UI:{ lineItem: [{ position: 10 }],\r\n        lineItem: [{label: 'Material'}],\r\n        identification: [{ position: 10 }],\r\n        selectionField: [{ position: 20 }]\r\n        }\r\n  Material;\r\n  @UI:{ lineItem: [{ position: 20 }],\r\n        lineItem: [{label: 'Material Description'} ],\r\n        identification: [{ position: 20 }]\r\n        }\r\n  @UI.lineItem: [{exclude: true}]\r\n  ProductDescription;\r\n  @UI:{ lineItem: [{ position: 30 }],\r\n        lineItem: [{label: 'Plant'}],\r\n        identification: [{ position: 30 }],\r\n        selectionField: [{ position: 10 }]\r\n        }\r\n  Plant;\r\n  @UI:{ lineItem: [{ position: 40 }],\r\n        lineItem: [{label: 'Plant Name'}],\r\n        identification: [{ position: 40 }]\r\n        }\r\n  @UI.lineItem: [{exclude: true}]\r\n  PlantName;\r\n  @UI.lineItem: [{ position: 50 }]\r\n  @UI.lineItem: [{label: 'Storage Location'}]\r\n  @UI.identification: [{ position: 50 }]\r\n  @UI.selectionField: [{position: 50}]\r\n  StorageLocation;\r\n  @UI.lineItem: [{ position: 60 }]\r\n  @UI.lineItem: [{label: 'Storage Location Name'}]\r\n  @UI.identification: [{ position: 60 }]\r\n  @UI.lineItem: [{exclude: true}]\r\n  storagelocationname;\r\n  @UI.lineItem: [{ position: 70 }]\r\n  @UI.lineItem: [{label: 'Batch'}]\r\n  @UI.identification: [{ position: 70 }]\r\n  @UI.selectionField: [{position: 70}]\r\n  Batch;\r\n  @UI.lineItem: [{ position: 80 }]\r\n  @UI.lineItem: [{label: 'Supplier Batch'}]\r\n  @UI.identification: [{ position: 80 }]\r\n  @UI.selectionField: [{position: 80}]\r\n  BatchBySupplier;\r\n  @UI.lineItem: [{ position: 90 }]\r\n  @UI.lineItem: [{label: 'Supplier'}]\r\n  @UI.identification: [{ position: 90 }]\r\n  Supplier;\r\n  @UI.lineItem: [{ position: 100 }]\r\n  @UI.lineItem: [{label: 'Supplier Name'}]\r\n  @UI.identification: [{ position: 100 }]\r\n  @UI.lineItem: [{exclude: true}]\r\n  SupplierName;\r\n  @UI.lineItem: [{ position: 110 }]\r\n  @UI.lineItem: [{label: 'Unrestricted Inventory Qty'}]\r\n  @UI.identification: [{ position: 110 }]\r\n  MatlWrhsStkQtyInMatlBaseUnit;\r\n  @UI.lineItem: [{ position: 120 }]\r\n  @UI.lineItem: [{label: 'Unit'}]\r\n  @UI.identification: [{ position: 120 }]\r\n//  @UI.lineItem: [{exclude: true}]\r\n  @UI.hidden: true\r\n  BaseUnit;\r\n  @UI.lineItem: [{ position: 130 }]\r\n  @UI.lineItem: [{label: 'Expiration Date'}]\r\n  @UI.identification: [{ position: 130 }]\r\n  ShelfLifeExpirationDate;\r\n  @UI.lineItem: [{ position: 140 }]\r\n  @UI.lineItem: [{label: 'Manufacture Date'}]\r\n  @UI.identification: [{ position: 140 }]\r\n  @UI.lineItem: [{exclude: true}]\r\n  ManufactureDate;\r\n  @UI.lineItem: [{ position: 150 }]\r\n  @UI.lineItem: [{label: 'Batch Status'}]\r\n  @UI.identification: [{ position: 150 }]\r\n  @UI.lineItem: [{exclude: true}]\r\n  BatchStatus;\r\n  @UI.lineItem: [{ position: 160, importance: #HIGH }]\r\n  @UI.lineItem: [{label: 'Remaining Days'}]\r\n  @UI.identification: [{ position: 160 }]\r\n  remaining_days;\r\n//  @UI.lineItem  : [{ position: 170 , criticality: 'criticality' , criticalityRepresentation: #WITH_ICON }]\r\n//  //@UI.lineItem: [{ position: 170, value: 'due_range', criticality: 'Criticality' }]\r\n//  @UI.lineItem: [{label: 'Due Date Range'}]\r\n//  @UI.identification: [{ position: 170 }]\r\n//  due_range;    \r\n//  @UI.hidden: true\r\n//  InventoryStockType;\r\n//  @UI.hidden: true\r\n//  MatlDocLatestPostgDate;\r\n  @UI.hidden: true\r\n  criticality;\r\n    \r\n}"
+    "SOURCE":"@Metadata.layer: #CUSTOMER\r\n@UI.headerInfo.title.type: #STANDARD\r\n@UI.headerInfo.title.label: 'Material Shelf Life Management'\r\n@UI.headerInfo.description.type: #STANDARD\r\n@UI.headerInfo.typeName: 'Material Due List'\r\n@UI.headerInfo.typeNamePlural: 'Material Shelf Life Management'\r\n\r\nannotate entity ZYCDS_DUE_MAT_LIST\r\n    with \r\n{\r\n @UI.facet: [{ id: 'Material',\r\n                purpose: #STANDARD,\r\n                type: #IDENTIFICATION_REFERENCE,\r\n                label: 'Material',\r\n                position: 10}\r\n                 ]\r\n\r\n  @UI:{ lineItem: [{ position: 10 }],\r\n        lineItem: [{label: 'Material'}],\r\n        identification: [{ position: 10 }],\r\n        selectionField: [{ position: 20 }]\r\n        }\r\n  Material;\r\n  @UI:{ lineItem: [{ position: 20 }],\r\n        lineItem: [{label: 'Material Description'} ],\r\n        identification: [{ position: 20 }]\r\n        }\r\n  @UI.lineItem: [{exclude: true}]\r\n  ProductDescription;\r\n  @UI:{ lineItem: [{ position: 30 }],\r\n        lineItem: [{label: 'Plant'}],\r\n        identification: [{ position: 30 }],\r\n        selectionField: [{ position: 10 }]\r\n        }\r\n  Plant;\r\n  @UI:{ lineItem: [{ position: 40 }],\r\n        lineItem: [{label: 'Plant Name'}],\r\n        identification: [{ position: 40 }]\r\n        }\r\n  @UI.lineItem: [{exclude: true}]\r\n  PlantName;\r\n  @UI.lineItem: [{ position: 50 }]\r\n  @UI.lineItem: [{label: 'Storage Location'}]\r\n  @UI.identification: [{ position: 50 }]\r\n  @UI.selectionField: [{position: 50}]\r\n  StorageLocation;\r\n  @UI.lineItem: [{ position: 60 }]\r\n  @UI.lineItem: [{label: 'Storage Location Name'}]\r\n  @UI.identification: [{ position: 60 }]\r\n  @UI.lineItem: [{exclude: true}]\r\n  storagelocationname;\r\n  @UI.lineItem: [{ position: 70 }]\r\n  @UI.lineItem: [{label: 'Batch'}]\r\n  @UI.identification: [{ position: 70 }]\r\n  @UI.selectionField: [{position: 70}]\r\n  Batch;\r\n  @UI.lineItem: [{ position: 80 }]\r\n  @UI.lineItem: [{label: 'Supplier Batch'}]\r\n  @UI.identification: [{ position: 80 }]\r\n  @UI.selectionField: [{position: 80}]\r\n  BatchBySupplier;\r\n  @UI.lineItem: [{ position: 90 }]\r\n  @UI.lineItem: [{label: 'Supplier'}]\r\n  @UI.identification: [{ position: 90 }]\r\n  Supplier;\r\n  @UI.lineItem: [{ position: 100 }]\r\n  @UI.lineItem: [{label: 'Supplier Name'}]\r\n  @UI.identification: [{ position: 100 }]\r\n  @UI.lineItem: [{exclude: true}]\r\n  SupplierName;\r\n  @UI.lineItem: [{ position: 110 }]\r\n  @UI.lineItem: [{label: 'Unrestricted Inventory Qty'}]\r\n  @UI.identification: [{ position: 110 }]\r\n  MatlWrhsStkQtyInMatlBaseUnit;\r\n  @UI.lineItem: [{ position: 120 }]\r\n  @UI.lineItem: [{label: 'Unit'}]\r\n  @UI.identification: [{ position: 120 }]\r\n//  @UI.lineItem: [{exclude: true}]\r\n  @UI.hidden: true\r\n  BaseUnit;\r\n  @UI.lineItem: [{ position: 130 }]\r\n  @UI.lineItem: [{label: 'Expiration Date'}]\r\n  @UI.identification: [{ position: 130 }]\r\n  ShelfLifeExpirationDate;\r\n  @UI.lineItem: [{ position: 140 }]\r\n  @UI.lineItem: [{label: 'Manufacture Date'}]\r\n  @UI.identification: [{ position: 140 }]\r\n  @UI.lineItem: [{exclude: true}]\r\n  ManufactureDate;\r\n  @UI.lineItem: [{ position: 150 }]\r\n  @UI.lineItem: [{label: 'Batch Status'}]\r\n  @UI.identification: [{ position: 150 }]\r\n  @UI.lineItem: [{exclude: true}]\r\n  @UI.adaptationHidden: true\r\n  BatchStatus;\r\n  @UI.lineItem: [{ position: 160, importance: #HIGH }]\r\n  @UI.lineItem: [{label: 'Remaining Days'}]\r\n  @UI.identification: [{ position: 160 }]\r\n  Remaining_days;\r\n//  @UI.lineItem  : [{ position: 170 , criticality: 'criticality' , criticalityRepresentation: #WITH_ICON }]\r\n//  //@UI.lineItem: [{ position: 170, value: 'due_range', criticality: 'Criticality' }]\r\n//  @UI.lineItem: [{label: 'Due Date Range'}]\r\n//  @UI.identification: [{ position: 170 }]\r\n//  due_range;    \r\n//  @UI.hidden: true\r\n//  InventoryStockType;\r\n//  @UI.hidden: true\r\n//  MatlDocLatestPostgDate;\r\n  @UI.hidden: true\r\n  criticality;\r\n    \r\n}"
    }
   ]
  },
@@ -160,6 +160,13 @@
     "NAME":"UI.SELECTIONFIELD$1$.POSITION",
     "ELEMENT_TYPE":"S",
     "VALUE":"80"
+   },
+   {
+    "DDLXNAME":"ZYC_DUE_MAT_LIST",
+    "ELEMENT":"BATCHSTATUS",
+    "NAME":"UI.ADAPTATIONHIDDEN",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"true"
    },
    {
     "DDLXNAME":"ZYC_DUE_MAT_LIST",
@@ -703,8 +710,8 @@
     "EXTENDED_ARTIFACT":"ZYCDS_DUE_MAT_LIST",
     "VARIANT":"",
     "LAYER":5500,
-    "DT_UUID":"FA163E3828681FE098E18A78F53E53F9",
-    "RT_HASH":"8A02F7BEAEF2B44DE1AACA2C646A502DCCA82856",
+    "DT_UUID":"FA163E3828681FD0BEEA37C8DA91035D",
+    "RT_HASH":"595B63983A86540EA253C0BCE0D465789B5DA704",
     "GEN_VERSION":"0",
     "TYPE":"0"
    }

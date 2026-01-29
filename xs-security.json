@@ -1,0 +1,7 @@
+{
+  "xsappname": "ZCPG_Accelerator",
+  "tenant-mode": "dedicated",
+  "description": "Security profile of called application",
+  "scopes": [],
+  "role-templates": []
+}

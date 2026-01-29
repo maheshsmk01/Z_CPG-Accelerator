@@ -1,0 +1,430 @@
+{
+ "meta": {
+  "creator": "cds-dk 9.2.0"
+ },
+ "$version": "2.0",
+ "definitions": {
+  "mslreport": {
+   "kind": "service",
+   "@cds.external": true,
+   "@CodeList.UnitsOfMeasure": {
+    "Url": "../../../../default/iwbep/common/0001/$metadata",
+    "CollectionPath": "UnitsOfMeasure"
+   },
+   "@Common.ApplyMultiUnitBehaviorForSortingAndFiltering": true,
+   "@Capabilities.FilterFunctions": [
+    "eq",
+    "ne",
+    "gt",
+    "ge",
+    "lt",
+    "le",
+    "and",
+    "or",
+    "contains",
+    "startswith",
+    "endswith",
+    "any",
+    "all"
+   ],
+   "@Capabilities.SupportedFormats": [
+    "application/json",
+    "application/pdf"
+   ],
+   "@PDF.Features": {
+    "DocumentDescriptionReference": "../../../../default/iwbep/common/0001/$metadata",
+    "DocumentDescriptionCollection": "MyDocumentDescriptions",
+    "ArchiveFormat": true,
+    "Border": true,
+    "CoverPage": true,
+    "FitToPage": true,
+    "FontName": true,
+    "FontSize": true,
+    "HeaderFooter": true,
+    "IANATimezoneFormat": true,
+    "Margin": true,
+    "Padding": true,
+    "ResultSizeDefault": 20000,
+    "ResultSizeMaximum": 20000,
+    "Signature": true,
+    "TextDirectionLayout": true,
+    "Treeview": true,
+    "UploadToFileShare": true
+   },
+   "@Capabilities.KeyAsSegmentSupported": true,
+   "@Capabilities.AsynchronousRequestsSupported": true
+  },
+  "mslreport.MAtDueList2": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "elements": {
+    "Material": {
+     "key": true,
+     "type": "cds.String",
+     "length": 18,
+     "notNull": true,
+     "@Common.IsUpperCase": true,
+     "@Common.Label": "Material",
+     "@Common.QuickInfo": "Material Number",
+     "@Common.DocumentationRef": "urn:sap-com:documentation:key?=type=DE&id=MATNR"
+    },
+    "Plant": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "notNull": true,
+     "@Common.IsUpperCase": true,
+     "@Common.Label": "Plant",
+     "@Common.Heading": "Plnt",
+     "@Common.DocumentationRef": "urn:sap-com:documentation:key?=type=DE&id=WERKS_D"
+    },
+    "StorageLocation": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "notNull": true,
+     "@Common.IsUpperCase": true,
+     "@Common.Label": "Storage Location",
+     "@Common.DocumentationRef": "urn:sap-com:documentation:key?=type=DE&id=LGORT_D"
+    },
+    "Batch": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "notNull": true,
+     "@Common.IsUpperCase": true,
+     "@Common.Label": "Batch",
+     "@Common.QuickInfo": "Batch Number",
+     "@Common.DocumentationRef": "urn:sap-com:documentation:key?=type=DE&id=CHARG_D"
+    },
+    "Supplier": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "notNull": true,
+     "@Common.IsUpperCase": true,
+     "@Common.Label": "Supplier",
+     "@Common.QuickInfo": "Supplier's Account Number",
+     "@Common.DocumentationRef": "urn:sap-com:documentation:key?=type=DE&id=ELIFN"
+    },
+    "ProductDescription": {
+     "type": "cds.String",
+     "length": 40,
+     "notNull": true,
+     "@Common.Label": "Product Description",
+     "@Common.DocumentationRef": "urn:sap-com:documentation:key?=type=DE&id=PRODUCTDESCRIPTION"
+    },
+    "PlantName": {
+     "type": "cds.String",
+     "length": 30,
+     "notNull": true,
+     "@Common.Label": "Plant Name"
+    },
+    "StorageLocationName": {
+     "type": "cds.String",
+     "length": 16,
+     "notNull": true,
+     "@Common.Label": "Storage Loc. Name",
+     "@Common.Heading": "Storage Location Name",
+     "@Common.QuickInfo": "Storage Location Name"
+    },
+    "BatchBySupplier": {
+     "type": "cds.String",
+     "length": 15,
+     "notNull": true,
+     "@Common.IsUpperCase": true,
+     "@Common.Label": "Supplier Batch",
+     "@Common.QuickInfo": "Supplier Batch Number",
+     "@Common.DocumentationRef": "urn:sap-com:documentation:key?=type=DE&id=LICHN"
+    },
+    "SupplierName": {
+     "type": "cds.String",
+     "length": 80,
+     "notNull": true,
+     "@Common.Label": "Name of Supplier",
+     "@Common.Heading": "Supplier"
+    },
+    "BaseUnit": {
+     "type": "cds.String",
+     "length": 3,
+     "notNull": true,
+     "@Common.IsUnit": true,
+     "@UI.Hidden": true,
+     "@Common.Label": "Base Unit of Measure",
+     "@Common.Heading": "BUn",
+     "@Common.DocumentationRef": "urn:sap-com:documentation:key?=type=DE&id=MEINS"
+    },
+    "MatlWrhsStkQtyInMatlBaseUnit": {
+     "type": "cds.Decimal",
+     "precision": 31,
+     "scale": 14,
+     "notNull": true,
+     "@Measures.Unit": {
+      "=": "BaseUnit"
+     }
+    },
+    "MatlBatchIsInRstrcdUseStock": {
+     "type": "cds.Boolean",
+     "notNull": true,
+     "@Common.Label": "Batch Restricted",
+     "@Common.Heading": "Re",
+     "@Common.QuickInfo": "Batch in Restricted-Use Stock",
+     "@Common.DocumentationRef": "urn:sap-com:documentation:key?=type=DE&id=DZUSTD"
+    },
+    "ShelfLifeExpirationDate": {
+     "type": "cds.Date",
+     "@Common.Label": "SLED/BBD",
+     "@Common.QuickInfo": "Shelf Life Expiration or Best-Before Date",
+     "@Common.DocumentationRef": "urn:sap-com:documentation:key?=type=DE&id=VFDAT"
+    },
+    "ManufactureDate": {
+     "type": "cds.Date",
+     "@Common.Label": "Date of Manufacture",
+     "@Common.Heading": "Manuf. Dte"
+    },
+    "BatchStatus": {
+     "type": "cds.String",
+     "length": 12,
+     "notNull": true
+    },
+    "Remaining_days": {
+     "type": "cds.Integer",
+     "notNull": true
+    },
+    "Criticality": {
+     "type": "cds.Integer",
+     "@odata.Type": "Edm.Byte",
+     "notNull": true,
+     "@UI.Hidden": true,
+     "@Common.Label": "Criticality",
+     "@Common.QuickInfo": "Data element for Config"
+    },
+    "Due_range": {
+     "type": "cds.String",
+     "length": 60,
+     "notNull": true
+    }
+   },
+   "@Common.Label": "Material Due Date List",
+   "@UI.Facets": [
+    {
+     "$Type": "SAP__UI.ReferenceFacet",
+     "Label": "Material",
+     "ID": "Material",
+     "Target": {
+      "=": "@UI.Identification"
+     }
+    }
+   ],
+   "@UI.HeaderInfo": {
+    "TypeName": "Material Due List2",
+    "TypeNamePlural": "Material Shelf Life Management List",
+    "Title": {
+     "$Type": "SAP__UI.DataField",
+     "Label": "Material Shelf Life Management List"
+    },
+    "Description": {
+     "$Type": "SAP__UI.DataField"
+    }
+   },
+   "@UI.Identification": [
+    {
+     "$Type": "SAP__UI.DataField",
+     "Value": {
+      "=": "Material"
+     }
+    },
+    {
+     "$Type": "SAP__UI.DataField",
+     "Label": "Material Description",
+     "Value": {
+      "=": "ProductDescription"
+     }
+    },
+    {
+     "$Type": "SAP__UI.DataField",
+     "Value": {
+      "=": "Plant"
+     }
+    },
+    {
+     "$Type": "SAP__UI.DataField",
+     "Value": {
+      "=": "PlantName"
+     }
+    },
+    {
+     "$Type": "SAP__UI.DataField",
+     "Value": {
+      "=": "StorageLocation"
+     }
+    },
+    {
+     "$Type": "SAP__UI.DataField",
+     "Value": {
+      "=": "StorageLocationName"
+     }
+    },
+    {
+     "$Type": "SAP__UI.DataField",
+     "Value": {
+      "=": "Batch"
+     }
+    },
+    {
+     "$Type": "SAP__UI.DataField",
+     "Value": {
+      "=": "BatchBySupplier"
+     }
+    },
+    {
+     "$Type": "SAP__UI.DataField",
+     "Value": {
+      "=": "Supplier"
+     }
+    },
+    {
+     "$Type": "SAP__UI.DataField",
+     "Value": {
+      "=": "SupplierName"
+     }
+    },
+    {
+     "$Type": "SAP__UI.DataField",
+     "Label": "Expiration Date",
+     "Value": {
+      "=": "ShelfLifeExpirationDate"
+     }
+    },
+    {
+     "$Type": "SAP__UI.DataField",
+     "Label": "Remaining Days",
+     "Value": {
+      "=": "Remaining_days"
+     }
+    },
+    {
+     "$Type": "SAP__UI.DataField",
+     "Label": "Due Date Range",
+     "Criticality": {
+      "=": "Criticality"
+     },
+     "Value": {
+      "=": "Due_range"
+     }
+    }
+   ],
+   "@UI.LineItem": [
+    {
+     "$Type": "SAP__UI.DataField",
+     "Label": "Material",
+     "Value": {
+      "=": "Material"
+     }
+    },
+    {
+     "$Type": "SAP__UI.DataField",
+     "Label": "Plant",
+     "Value": {
+      "=": "Plant"
+     }
+    },
+    {
+     "$Type": "SAP__UI.DataField",
+     "Label": "Storage Location",
+     "Value": {
+      "=": "StorageLocation"
+     }
+    },
+    {
+     "$Type": "SAP__UI.DataField",
+     "Label": "Batch",
+     "Value": {
+      "=": "Batch"
+     }
+    },
+    {
+     "$Type": "SAP__UI.DataField",
+     "Label": "Supplier Batch",
+     "Value": {
+      "=": "BatchBySupplier"
+     }
+    },
+    {
+     "$Type": "SAP__UI.DataField",
+     "Label": "Supplier",
+     "Value": {
+      "=": "Supplier"
+     }
+    },
+    {
+     "$Type": "SAP__UI.DataField",
+     "Label": "Unrestricted Inventory Qty",
+     "Value": {
+      "=": "MatlWrhsStkQtyInMatlBaseUnit"
+     }
+    },
+    {
+     "$Type": "SAP__UI.DataField",
+     "Label": "Expiration Date",
+     "Value": {
+      "=": "ShelfLifeExpirationDate"
+     }
+    },
+    {
+     "$Type": "SAP__UI.DataField",
+     "Label": "Remaining Days",
+     "Value": {
+      "=": "Remaining_days"
+     },
+     "@UI.Importance": {
+      "#": "High"
+     }
+    },
+    {
+     "$Type": "SAP__UI.DataField",
+     "Label": "Due Date Range",
+     "Criticality": {
+      "=": "Criticality"
+     },
+     "CriticalityRepresentation": {
+      "#": "WithIcon"
+     },
+     "Value": {
+      "=": "Due_range"
+     }
+    },
+    {
+     "$Type": "SAP__UI.DataField",
+     "Label": "Material Description",
+     "Value": {
+      "=": "ProductDescription"
+     }
+    }
+   ],
+   "@UI.SelectionFields": [
+    "Plant",
+    "Material",
+    "StorageLocation",
+    "Batch",
+    "BatchBySupplier",
+    "MatlWrhsStkQtyInMatlBaseUnit",
+    "ProductDescription"
+   ],
+   "@Capabilities.SearchRestrictions.Searchable": false,
+   "@Capabilities.InsertRestrictions.Insertable": false,
+   "@Capabilities.DeleteRestrictions.Deletable": false,
+   "@Capabilities.UpdateRestrictions.Updatable": false,
+   "@Capabilities.UpdateRestrictions.QueryOptions.SelectSupported": true,
+   "@Capabilities.FilterRestrictions.FilterExpressionRestrictions": [
+    {
+     "Property": {
+      "=": "MatlWrhsStkQtyInMatlBaseUnit"
+     },
+     "AllowedExpressions": "MultiValue"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,66 @@
+{
+  "name": "ZCPG_Accelerator",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@cap-js/hana": "^2",
+    "@sap/cds": "^9",
+    "express": "^4",
+    "hdb": "^2.25.1",
+    "@sap-cloud-sdk/connectivity": "^3",
+    "@sap-cloud-sdk/http-client": "^3",
+    "@sap-cloud-sdk/resilience": "^3"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@cap-js/cds-types": "^0.13.0",
+    "@cap-js/sqlite": "^2",
+    "@sap/cds-dk": ">=8",
+    "rimraf": "^5.0.5",
+    "mbt": "^1.2.29",
+    "cds-plugin-ui5": "^0.13.0"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-configtable": "cds watch --open configtable/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "undeploy": "cf undeploy ZCPG_Accelerator --delete-services --delete-service-keys --delete-service-brokers",
+    "build": "rimraf resources mta_archives && mbt build --mtar archive",
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
+    "watch-mslreport": "cds watch --open mslreport/index.html?sap-ui-xx-viewCache=false --livereload false"
+  },
+  "cds": {
+    "requires": {
+      "auth": "mocked",
+      "destinations": true,
+      "db": {
+        "kind": "hana",
+        "credentials": {
+          "host": "1cfc87c7-52a5-4a3c-bff0-fd684a095442.hna0.prod-eu10.hanacloud.ondemand.com",
+          "port": "443",
+          "database_id": "1cfc87c7-52a5-4a3c-bff0-fd684a095442"
+        }
+      },
+      "mslreport": {
+        "kind": "odata",
+        "model": "srv/external/mslreport",
+        "credentials": {
+          "path": "/sap/opu/odata4/sap/zycds_due_mat_list2_sb_v4/srvd/sap/zycds_due_mat_list2_sd/0001",
+          "destination": "my403232_Public_cloud",
+          "forwardAuthToken": true
+        }
+      }
+    }
+  },
+  "sapux": [
+    "app/configtable",
+    "app/mslreport"
+  ],
+  "workspaces": [
+    "app/*"
+  ]
+}
