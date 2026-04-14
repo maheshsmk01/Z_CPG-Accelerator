@@ -7,9 +7,9 @@
     "DDLXNAME":"ZYCDS_DUE_MAT_LIST2",
     "VERSION":"A",
     "CHANGED_BY":"SAP_CUSTOMER",
-    "CHANGED_ON":"2026-04-10",
-    "CHANGED_AT":"17:46:12",
-    "UUID":"FA163E3828681FD18DA0A54C2B498B24",
+    "CHANGED_ON":"2026-04-14",
+    "CHANGED_AT":"14:06:44",
+    "UUID":"FA163E3828681FD18E81655F8A61EB7A",
     "ABAP_LANGUAGE_VERSION":"5"
    }
   ]
@@ -34,7 +34,7 @@
     "DDLXNAME":"ZYCDS_DUE_MAT_LIST2",
     "VERSION":"A",
     "UUID":"",
-    "SOURCE":"@Metadata.layer: #CUSTOMER\r\n//@UI.headerInfo.title.type: #STANDARD\r\n//@UI.headerInfo.title.label: 'Material Shelf Life Management List'\r\n//@UI.headerInfo.description.type: #STANDARD\r\n@UI.headerInfo: {\r\n    typeName: 'Material Due List',\r\n    typeNamePlural: 'Material Shelf Life Management List',\r\n//    title:  {\r\n//        type: #STANDARD,\r\n//        value: 'Material'\r\n//    },\r\n    description: {\r\n        value: 'ProductDescription'\r\n    }\r\n}\r\n//@UI.headerInfo.typeName: 'Material Due List2'\r\n//@UI.headerInfo.typeNamePlural: 'Material Shelf Life Management List'\r\nannotate entity ZYCDS_DUE_MAT_LIST2\r\n    with \r\n{\r\n @UI.facet: [{ id: 'Material',\r\n                purpose: #STANDARD,\r\n                type: #IDENTIFICATION_REFERENCE,\r\n                label: 'Material',\r\n                position: 10}\r\n                 ]\r\n\r\n  @UI:{ lineItem: [{ position: 10 }],\r\n        lineItem: [{label: 'Material'}],\r\n        identification: [{ position: 10 }],\r\n        selectionField: [{ position: 10 }]\r\n        }\r\n        @EndUserText.label:'Material'\r\n  Material;\r\n//  @UI:{ lineItem: [{ position: 20 }],\r\n//        lineItem: [{label: 'Material Description'} ],\r\n//        identification: [{ position: 20 }],\r\n//         selectionField: [{ position: 20 }]\r\n//        }\r\n//  @UI.lineItem: [{exclude: true}]\r\n//  ProductDescription;\r\n  @UI:{ lineItem: [{ position: 30 }],\r\n        lineItem: [{label: 'Plant'}],\r\n        identification: [{ position: 30 }],\r\n        selectionField: [{ position: 10 }]\r\n        }\r\n        @EndUserText.label:'Plant'\r\n  Plant;\r\n  @UI:{ lineItem: [{ position: 40 }],\r\n        lineItem: [{label: 'Plant Name'}],\r\n        identification: [{ position: 40 , hidden: true}]\r\n        }\r\n  @UI.lineItem: [{exclude: true}]\r\n  @EndUserText.label:'Plant Name'\r\n  @UI.adaptationHidden: true\r\n  PlantName;\r\n  @UI.lineItem: [{ position: 50 }]\r\n  @UI.lineItem: [{label: 'Storage Location'}]\r\n  @UI.identification: [{ position: 50 }]\r\n  @UI.selectionField: [{position: 50}]\r\n  @EndUserText.label:'Storage Location'\r\n  StorageLocation;\r\n  @UI.lineItem: [{ position: 60 }]\r\n  @UI.lineItem: [{label: 'Storage Location Name'}]\r\n  @UI.identification: [{ position: 60, hidden: true}]\r\n  @UI.lineItem: [{exclude: true}]\r\n  @EndUserText.label: 'Storage Location Name'\r\n  @UI.adaptationHidden: true\r\n  StorageLocationName;\r\n  @UI.lineItem: [{ position: 70 }]\r\n  @UI.lineItem: [{label: 'Batch'}]\r\n  @UI.identification: [{ position: 70 }]\r\n  @UI.selectionField: [{position: 70}]\r\n  @EndUserText.label: 'Batch'\r\n  Batch;\r\n  @UI.lineItem: [{ position: 80 }]\r\n  @UI.lineItem: [{label: 'Supplier Batch'}]\r\n  @UI.identification: [{ position: 80 }]\r\n  @UI.selectionField: [{position: 80}]\r\n  @EndUserText.label: 'Supplier Batch'\r\n  BatchBySupplier;\r\n  @UI.lineItem: [{ position: 90 }]\r\n  @UI.lineItem: [{label: 'Supplier'}]\r\n  @UI.identification: [{ position: 90 }]\r\n  @EndUserText.label: 'Supplier'\r\n  @UI.adaptationHidden: true\r\n  Supplier;\r\n  @UI.lineItem: [{ position: 100 }]\r\n  @UI.lineItem: [{label: 'Supplier Name'}]\r\n  @UI.identification: [{ position: 100 , hidden: true}]\r\n  @EndUserText.label: 'Supplier Name'\r\n  @UI.lineItem: [{exclude: true}]\r\n  @UI.adaptationHidden: true\r\n  SupplierName;\r\n  @UI.lineItem: [{ position: 110 }]\r\n  @UI.lineItem: [{label: 'Unrestricted Inventory Qty'}]\r\n  @EndUserText.label: 'Unrestricted Inventory Qty'\r\n @UI.lineItem: [{exclude: true}]\r\n @UI.adaptationHidden: true \r\n  MatlWrhsStkQtyInMatlBaseUnit;  \r\n  @UI.lineItem: [{ position: 120 }] \r\n  @UI.lineItem: [{ hidden: true  }] \r\n  @UI.lineItem: [{label: 'Unit'}]\r\n  @EndUserText.label: 'Unrestricted Inventory Qty Unit'\r\n @UI.selectionField: [{position: 120}]\r\n  BaseUnit;\r\n  @UI.lineItem: [{ position: 130 }]\r\n  @UI.lineItem: [{label: 'Expiration Date'}]\r\n  @UI.identification: [{ position: 130 }]\r\n   @UI.identification: [{label: 'Expiration Date'}]\r\n   @EndUserText.label: 'Expiration Date'\r\n   @UI.adaptationHidden: true\r\n  ShelfLifeExpirationDate;\r\n  @UI.lineItem: [{ position: 140 }]\r\n  @UI.lineItem: [{label: 'Manufacture Date'}]\r\n // @UI.identification: [{ position: 140 }]\r\n  @UI.lineItem: [{exclude: true}]\r\n   @EndUserText.label: 'Manufacture Date'\r\n   @UI.adaptationHidden: true\r\n  ManufactureDate;\r\n  @UI.lineItem: [{ position: 150 }]\r\n  @UI.lineItem: [{label: 'Batch Status'}]\r\n  @UI.lineItem: [{exclude: true}]\r\n  @EndUserText.label: 'Batch Status'\r\n  @UI.identification: [{hidden: true}]\r\n  @UI.adaptationHidden: true \r\n  BatchStatus;\r\n  @UI.lineItem: [{ position: 160, importance: #HIGH }]\r\n  @UI.lineItem: [{label: 'Remaining Days'}]\r\n  @UI.identification: [{ position: 160 }]\r\n  @UI.identification: [{label: 'Remaining Days'}]\r\n  @EndUserText.label: 'Remaining Days'\r\n  @UI.adaptationHidden: true\r\n  Remaining_days;\r\n  @UI.lineItem  : [{ position: 170 , criticality: 'Criticality' , criticalityRepresentation: #WITH_ICON }]\r\n @UI.lineItem: [{label: 'Due Date Range'}]\r\n  @UI.identification: [{ position: 170 }]\r\n   @UI.identification: [{label: 'Due Date Range'}]\r\n   @UI.identification: [{criticality: 'Criticality'}]\r\n   @UI.adaptationHidden: true\r\n Due_range; \r\n  @UI:{ lineItem: [{ position: 180 }],\r\n        lineItem: [{label: 'Material Description'} ],\r\n        identification: [{ position: 20 }],\r\n        identification: [{label: 'Material Description', hidden: true}  ]\r\n  //       selectionField: [{ position: 180 }]\r\n         \r\n        }\r\n        @EndUserText.label: 'Material Description'\r\n  @UI.lineItem: [{exclude: true}]\r\n   @UI.hidden: true\r\n  ProductDescription;   \r\n  @UI.hidden: true\r\n  Criticality;\r\n@UI.lineItem: [{ position: 190, importance: #HIGH }]     //N\r\n  @UI.lineItem: [{label: 'Shelf Life'}]\r\n  @UI.identification: [{ position: 190 }]\r\n  @UI.identification: [{label: 'Shelf Life'}]\r\n  @EndUserText.label: 'Shelf Life'\r\n  @UI.adaptationHidden: true\r\n  TotalShelfLife;\r\n  @UI.lineItem: [{ position: 200, importance: #HIGH }]    //N\r\n  @UI.lineItem: [{label: '% Shelf Life'}]\r\n  @UI.identification: [{ position: 200 }]\r\n  @UI.identification: [{label: '% Shelf Life'}]\r\n  @EndUserText.label: '% Shelf Life'\r\n   @UI.adaptationHidden: true\r\n  ShelfLifePercentage;\r\n      \r\n    \r\n}"
+    "SOURCE":"@Metadata.layer: #CUSTOMER\r\n//@UI.headerInfo.title.type: #STANDARD\r\n//@UI.headerInfo.title.label: 'Material Shelf Life Management List'\r\n//@UI.headerInfo.description.type: #STANDARD\r\n@UI.headerInfo: {\r\n    typeName: 'Material Due List',\r\n    typeNamePlural: 'Material Shelf Life Management List',\r\n//    title:  {\r\n//        type: #STANDARD,\r\n//        value: 'Material'\r\n//    },\r\n    description: {\r\n        value: 'ProductDescription'\r\n    }\r\n}\r\n//@UI.headerInfo.typeName: 'Material Due List2'\r\n//@UI.headerInfo.typeNamePlural: 'Material Shelf Life Management List'\r\nannotate entity ZYCDS_DUE_MAT_LIST2\r\n    with \r\n{\r\n @UI.facet: [{ id: 'Material',\r\n                purpose: #STANDARD,\r\n                type: #IDENTIFICATION_REFERENCE,\r\n                label: 'Material',\r\n                position: 10}\r\n                 ]\r\n\r\n  @UI:{ lineItem: [{ position: 10 }],\r\n        lineItem: [{label: 'Material'}],\r\n        identification: [{ position: 10 }],\r\n        selectionField: [{ position: 10 }]\r\n        }\r\n        @EndUserText.label:'Material'\r\n  Material;\r\n//  @UI:{ lineItem: [{ position: 20 }],\r\n//        lineItem: [{label: 'Material Description'} ],\r\n//        identification: [{ position: 20 }],\r\n//         selectionField: [{ position: 20 }]\r\n//        }\r\n//  @UI.lineItem: [{exclude: true}]\r\n//  ProductDescription;\r\n  @UI:{ lineItem: [{ position: 30 }],\r\n        lineItem: [{label: 'Plant'}],\r\n        identification: [{ position: 30 }],\r\n        selectionField: [{ position: 10 }]\r\n        }\r\n        @EndUserText.label:'Plant'\r\n  Plant;\r\n  @UI:{ lineItem: [{ position: 40 }],\r\n        lineItem: [{label: 'Plant Name'}],\r\n        identification: [{ position: 40 , hidden: true}]\r\n        }\r\n  @UI.lineItem: [{exclude: true}]\r\n  @EndUserText.label:'Plant Name'\r\n  @UI.adaptationHidden: true\r\n  PlantName;\r\n  @UI.lineItem: [{ position: 50 }]\r\n  @UI.lineItem: [{label: 'Storage Location'}]\r\n  @UI.identification: [{ position: 50 }]\r\n  @UI.selectionField: [{position: 50}]\r\n  @EndUserText.label:'Storage Location'\r\n  StorageLocation;\r\n  @UI.lineItem: [{ position: 60 }]\r\n  @UI.lineItem: [{label: 'Storage Location Name'}]\r\n  @UI.identification: [{ position: 60, hidden: true}]\r\n  @UI.lineItem: [{exclude: true}]\r\n  @EndUserText.label: 'Storage Location Name'\r\n  @UI.adaptationHidden: true\r\n  StorageLocationName;\r\n  @UI.lineItem: [{ position: 70 }]\r\n  @UI.lineItem: [{label: 'Batch'}]\r\n  @UI.identification: [{ position: 70 }]\r\n  @UI.selectionField: [{position: 70}]\r\n  @EndUserText.label: 'Batch'\r\n  Batch;\r\n  @UI.lineItem: [{ position: 80 }]\r\n  @UI.lineItem: [{label: 'Supplier Batch'}]\r\n  @UI.identification: [{ position: 80 }]\r\n  @UI.selectionField: [{position: 80}]\r\n  @EndUserText.label: 'Supplier Batch'\r\n  BatchBySupplier;\r\n  @UI.lineItem: [{ position: 90 }]\r\n  @UI.lineItem: [{label: 'Supplier'}]\r\n  @UI.identification: [{ position: 90 }]\r\n  @EndUserText.label: 'Supplier'\r\n  @UI.adaptationHidden: true\r\n  Supplier;\r\n  @UI.lineItem: [{ position: 100 }]\r\n  @UI.lineItem: [{label: 'Supplier Name'}]\r\n  @UI.identification: [{ position: 100 , hidden: true}]\r\n  @EndUserText.label: 'Supplier Name'\r\n  @UI.lineItem: [{exclude: true}]\r\n  @UI.adaptationHidden: true\r\n  SupplierName;\r\n  @UI.lineItem: [{ position: 110 }]\r\n  @UI.lineItem: [{label: 'Unrestricted Inventory Qty'}]\r\n  @EndUserText.label: 'Unrestricted Inventory Qty'\r\n @UI.lineItem: [{exclude: true}]\r\n @UI.adaptationHidden: true \r\n  MatlWrhsStkQtyInMatlBaseUnit;  \r\n  @UI.lineItem: [{ position: 120 }] \r\n  @UI.lineItem: [{ hidden: true  }] \r\n  @UI.lineItem: [{label: 'Unit'}]\r\n  @EndUserText.label: 'Unrestricted Inventory Qty Unit'\r\n @UI.selectionField: [{position: 120}]\r\n  BaseUnit;\r\n  @UI.lineItem: [{ position: 130 }]\r\n  @UI.lineItem: [{label: 'Expiration Date'}]\r\n  @UI.identification: [{ position: 130 }]\r\n   @UI.identification: [{label: 'Expiration Date'}]\r\n   @EndUserText.label: 'Expiration Date'\r\n   @UI.adaptationHidden: true\r\n  ShelfLifeExpirationDate;\r\n  @UI.lineItem: [{ position: 140 }]\r\n  @UI.lineItem: [{label: 'Manufacture Date'}]\r\n // @UI.identification: [{ position: 140 }]\r\n  @UI.lineItem: [{exclude: true}]\r\n   @EndUserText.label: 'Manufacture Date'\r\n   @UI.adaptationHidden: true\r\n  ManufactureDate;\r\n  @UI.lineItem: [{ position: 150 }]\r\n  @UI.lineItem: [{label: 'Batch Status'}]\r\n  @UI.lineItem: [{exclude: true}]\r\n  @EndUserText.label: 'Batch Status'\r\n  @UI.identification: [{hidden: true}]\r\n  @UI.adaptationHidden: true \r\n  BatchStatus;\r\n  @UI.lineItem: [{ position: 160, importance: #HIGH }]\r\n  @UI.lineItem: [{label: 'Remaining Days'}]\r\n  @UI.identification: [{ position: 160 }]\r\n  @UI.identification: [{label: 'Remaining Days'}]\r\n  @EndUserText.label: 'Remaining Days'\r\n  @UI.adaptationHidden: true\r\n  Remaining_days;\r\n  @UI.lineItem  : [{ position: 170 , criticality: 'Criticality' , criticalityRepresentation: #WITH_ICON }]\r\n @UI.lineItem: [{label: 'Due Date Range'}]\r\n  @UI.identification: [{ position: 170 }]\r\n   @UI.identification: [{label: 'Due Date Range'}]\r\n   @UI.identification: [{criticality: 'Criticality'}]\r\n   @UI.adaptationHidden: true\r\n Due_range; \r\n  @UI:{ lineItem: [{ position: 180 }],\r\n        lineItem: [{label: 'Material Description'} ],\r\n        identification: [{ position: 20 }],\r\n        identification: [{label: 'Material Description', hidden: true}  ]\r\n  //       selectionField: [{ position: 180 }]\r\n         \r\n        }\r\n        @EndUserText.label: 'Material Description'\r\n  @UI.lineItem: [{exclude: true}]\r\n   @UI.hidden: true\r\n  ProductDescription;   \r\n  @UI.hidden: true\r\n  Criticality;\r\n@UI.lineItem: [{ position: 190, importance: #HIGH }]     //N\r\n  @UI.lineItem: [{label: 'Shelf Life'}]\r\n  @UI.identification: [{ position: 190 }]\r\n  @UI.identification: [{label: 'Shelf Life'}]\r\n  @EndUserText.label: 'Shelf Life'\r\n  @UI.adaptationHidden: true\r\n  TotalShelfLifeWithUnit;  //TotalShelfLife; //N\r\n  @UI.lineItem: [{ position: 200, importance: #HIGH }]    //N\r\n  @UI.lineItem: [{label: '% Shelf Life'}]\r\n  @UI.identification: [{ position: 200 }]\r\n  @UI.identification: [{label: '% Shelf Life'}]\r\n  @EndUserText.label: '% Shelf Life'\r\n   @UI.adaptationHidden: true\r\n  ShelfLifePercentage;\r\n  @UI.hidden: true   //N\r\n   @UI.adaptationHidden: true\r\n   TotalShelfLife; \r\n        @UI.hidden: true       //N\r\n        @UI.adaptationHidden: true\r\n    ShelfLifePeriodTypeText;\r\n     @UI.hidden: true       //N\r\n        @UI.adaptationHidden: true\r\n    ShelfLifeExpirationDatePeriod;\r\n}"
    }
   ]
  },
@@ -646,6 +646,20 @@
    },
    {
     "DDLXNAME":"ZYCDS_DUE_MAT_LIST2",
+    "ELEMENT":"SHELFLIFEEXPIRATIONDATEPERIOD",
+    "NAME":"UI.ADAPTATIONHIDDEN",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"true"
+   },
+   {
+    "DDLXNAME":"ZYCDS_DUE_MAT_LIST2",
+    "ELEMENT":"SHELFLIFEEXPIRATIONDATEPERIOD",
+    "NAME":"UI.HIDDEN",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"true"
+   },
+   {
+    "DDLXNAME":"ZYCDS_DUE_MAT_LIST2",
     "ELEMENT":"SHELFLIFEPERCENTAGE",
     "NAME":"ENDUSERTEXT.LABEL",
     "ELEMENT_TYPE":"S",
@@ -692,6 +706,20 @@
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
     "VALUE":"200"
+   },
+   {
+    "DDLXNAME":"ZYCDS_DUE_MAT_LIST2",
+    "ELEMENT":"SHELFLIFEPERIODTYPETEXT",
+    "NAME":"UI.ADAPTATIONHIDDEN",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"true"
+   },
+   {
+    "DDLXNAME":"ZYCDS_DUE_MAT_LIST2",
+    "ELEMENT":"SHELFLIFEPERIODTYPETEXT",
+    "NAME":"UI.HIDDEN",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"true"
    },
    {
     "DDLXNAME":"ZYCDS_DUE_MAT_LIST2",
@@ -864,13 +892,6 @@
    {
     "DDLXNAME":"ZYCDS_DUE_MAT_LIST2",
     "ELEMENT":"TOTALSHELFLIFE",
-    "NAME":"ENDUSERTEXT.LABEL",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"'Shelf Life'"
-   },
-   {
-    "DDLXNAME":"ZYCDS_DUE_MAT_LIST2",
-    "ELEMENT":"TOTALSHELFLIFE",
     "NAME":"UI.ADAPTATIONHIDDEN",
     "ELEMENT_TYPE":"S",
     "VALUE":"true"
@@ -878,34 +899,55 @@
    {
     "DDLXNAME":"ZYCDS_DUE_MAT_LIST2",
     "ELEMENT":"TOTALSHELFLIFE",
+    "NAME":"UI.HIDDEN",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"true"
+   },
+   {
+    "DDLXNAME":"ZYCDS_DUE_MAT_LIST2",
+    "ELEMENT":"TOTALSHELFLIFEWITHUNIT",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Shelf Life'"
+   },
+   {
+    "DDLXNAME":"ZYCDS_DUE_MAT_LIST2",
+    "ELEMENT":"TOTALSHELFLIFEWITHUNIT",
+    "NAME":"UI.ADAPTATIONHIDDEN",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"true"
+   },
+   {
+    "DDLXNAME":"ZYCDS_DUE_MAT_LIST2",
+    "ELEMENT":"TOTALSHELFLIFEWITHUNIT",
     "NAME":"UI.IDENTIFICATION$1$.LABEL",
     "ELEMENT_TYPE":"S",
     "VALUE":"'Shelf Life'"
    },
    {
     "DDLXNAME":"ZYCDS_DUE_MAT_LIST2",
-    "ELEMENT":"TOTALSHELFLIFE",
+    "ELEMENT":"TOTALSHELFLIFEWITHUNIT",
     "NAME":"UI.IDENTIFICATION$1$.POSITION",
     "ELEMENT_TYPE":"S",
     "VALUE":"190"
    },
    {
     "DDLXNAME":"ZYCDS_DUE_MAT_LIST2",
-    "ELEMENT":"TOTALSHELFLIFE",
+    "ELEMENT":"TOTALSHELFLIFEWITHUNIT",
     "NAME":"UI.LINEITEM$1$.IMPORTANCE",
     "ELEMENT_TYPE":"S",
     "VALUE":"#HIGH"
    },
    {
     "DDLXNAME":"ZYCDS_DUE_MAT_LIST2",
-    "ELEMENT":"TOTALSHELFLIFE",
+    "ELEMENT":"TOTALSHELFLIFEWITHUNIT",
     "NAME":"UI.LINEITEM$1$.LABEL",
     "ELEMENT_TYPE":"S",
     "VALUE":"'Shelf Life'"
    },
    {
     "DDLXNAME":"ZYCDS_DUE_MAT_LIST2",
-    "ELEMENT":"TOTALSHELFLIFE",
+    "ELEMENT":"TOTALSHELFLIFEWITHUNIT",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
     "VALUE":"190"
@@ -1220,21 +1262,21 @@
    {
     "DDLXNAME":"ZYCDS_DUE_MAT_LIST2",
     "DDLANGUAGE":"E",
-    "ELEMENT":"TOTALSHELFLIFE",
+    "ELEMENT":"TOTALSHELFLIFEWITHUNIT",
     "NAME":"ENDUSERTEXT.LABEL",
     "TEXT":"Shelf Life"
    },
    {
     "DDLXNAME":"ZYCDS_DUE_MAT_LIST2",
     "DDLANGUAGE":"E",
-    "ELEMENT":"TOTALSHELFLIFE",
+    "ELEMENT":"TOTALSHELFLIFEWITHUNIT",
     "NAME":"UI.IDENTIFICATION$1$.LABEL",
     "TEXT":"Shelf Life"
    },
    {
     "DDLXNAME":"ZYCDS_DUE_MAT_LIST2",
     "DDLANGUAGE":"E",
-    "ELEMENT":"TOTALSHELFLIFE",
+    "ELEMENT":"TOTALSHELFLIFEWITHUNIT",
     "NAME":"UI.LINEITEM$1$.LABEL",
     "TEXT":"Shelf Life"
    }
@@ -1249,8 +1291,8 @@
     "EXTENDED_ARTIFACT":"ZYCDS_DUE_MAT_LIST2",
     "VARIANT":"",
     "LAYER":5500,
-    "DT_UUID":"FA163E3828681FD18DA0A54C2B498B24",
-    "RT_HASH":"E7D0A21AAD2DE811095015D6879FFAE00AF7F69D",
+    "DT_UUID":"FA163E3828681FD18E81655F8A61EB7A",
+    "RT_HASH":"FE8F9B903E6096E652FE7A639C252F685C5757F7",
     "GEN_VERSION":"0",
     "TYPE":"0"
    }

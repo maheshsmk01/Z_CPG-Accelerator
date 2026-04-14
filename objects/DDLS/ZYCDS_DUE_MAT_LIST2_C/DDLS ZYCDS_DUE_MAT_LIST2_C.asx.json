@@ -9,10 +9,10 @@
     "AS4USER":"SAP_CUSTOMER",
     "AS4DATE":"0000-00-00",
     "AS4TIME":"00:00:00",
-    "SOURCE":"@AccessControl.authorizationCheck: #NOT_REQUIRED\r\n@EndUserText.label: 'Material due data list Projection View'\r\n@Search.searchable: false\r\n@Metadata.allowExtensions: true\r\ndefine root view entity ZYCDS_DUE_MAT_LIST2_C \r\n provider contract transactional_query\r\n  as projection on ZYCDS_DUE_MAT_LIST2 \r\n \r\n{\r\n  key Material,\r\n  key Plant,\r\n  key StorageLocation,\r\n  key Batch,\r\n  key Supplier,\r\n//  key YCDS_DUE_MAT_LIST.InventoryStockType,\r\n//  key YCDS_DUE_MAT_LIST.MatlDocLatestPostgDate,\r\n ProductDescription,\r\n  PlantName,\r\n  StorageLocationName,\r\n  BatchBySupplier,\r\n  SupplierName,\r\n//  MatlWrhsStkQtyInMatlBaseUnit,\r\n  BaseUnit,\r\n  ShelfLifeExpirationDate,\r\n  ManufactureDate,\r\n  BatchStatus,\r\n  Remaining_days,\r\n  Due_range,\r\n  TotalShelfLife,      //N\r\n  ShelfLifePercentage                        //N\r\n\r\n  }\r\n/*+[internal] {\n\"BASEINFO\":\n{\n\"FROM\":\n[\n\"ZYCDS_DUE_MAT_LIST2\"\n],\n\"ASSOCIATED\":\n[],\n\"BASE\":\n[],\n\"ANNO_REF\":\n[],\n\"SCALAR_FUNCTION\":\n[],\n\"VERSION\":0,\n\"ANNOREF_EVALUATION_ERROR\":\"\"\n}\n}*/",
+    "SOURCE":"@AccessControl.authorizationCheck: #NOT_REQUIRED\r\n@EndUserText.label: 'Material due data list Projection View'\r\n@Search.searchable: false\r\n@Metadata.allowExtensions: true\r\ndefine root view entity ZYCDS_DUE_MAT_LIST2_C \r\n provider contract transactional_query\r\n  as projection on ZYCDS_DUE_MAT_LIST2 \r\n \r\n{\r\n  key Material,\r\n  key Plant,\r\n  key StorageLocation,\r\n  key Batch,\r\n  key Supplier,\r\n//  key YCDS_DUE_MAT_LIST.InventoryStockType,\r\n//  key YCDS_DUE_MAT_LIST.MatlDocLatestPostgDate,\r\n ProductDescription,\r\n  PlantName,\r\n  StorageLocationName,\r\n  BatchBySupplier,\r\n  SupplierName,\r\n//  MatlWrhsStkQtyInMatlBaseUnit,\r\n  BaseUnit,\r\n  ShelfLifeExpirationDate,\r\n  ManufactureDate,\r\n  BatchStatus,\r\n  Remaining_days,\r\n  Due_range,\r\n  TotalShelfLifeWithUnit, //TotalShelfLife,      //N\r\n  ShelfLifePercentage                        //N\r\n\r\n  }\r\n/*+[internal] {\n\"BASEINFO\":\n{\n\"FROM\":\n[\n\"ZYCDS_DUE_MAT_LIST2\"\n],\n\"ASSOCIATED\":\n[],\n\"BASE\":\n[],\n\"ANNO_REF\":\n[],\n\"SCALAR_FUNCTION\":\n[],\n\"VERSION\":0,\n\"ANNOREF_EVALUATION_ERROR\":\"\"\n}\n}*/",
     "PARENTNAME":"",
     "ACTFLAG":"",
-    "CHGFLAG":"4",
+    "CHGFLAG":"34",
     "SOURCE_TYPE":"P",
     "SOURCE_ORIGIN":"0",
     "ABAP_LANGUAGE_VERSION":"5"
